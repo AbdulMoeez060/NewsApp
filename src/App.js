@@ -2,7 +2,7 @@ import './App.css';
 import React, { Component } from 'react'
 import Navbar from './components/Navbar';
 import News from './components/News';
-//Api key 99252b8d5d48411384b48c62d6447881
+
 export default class App extends Component {
   render() {
     return (
