@@ -5,14 +5,15 @@ import PropTypes from 'prop-types'
 
 export class News extends Component {
     
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         console.log("News Component");
         this.state={
             articles :[],
             loading: false,
             page: 1
-        }
+        };
+        document.title= `${this.props.category.charAt(0).toUpperCase()+this.props.category.slice(1)} - NewsMonkey`;
     }
     static defaultProps = {
         country: 'us',
@@ -59,7 +60,7 @@ export class News extends Component {
 
             
             <div className="container my-3">
-                <h1 className="text-center" style={{margin: "30px 0px"}}>NewsMonkey - Top Headline</h1>
+                <h1 className="text-center" style={{margin: "30px 0px"}}>NewsMonkey - Top {this.props.category.charAt(0).toUpperCase()+this.props.category.slice(1)} Headline</h1>
                 {this.state.loading && <Spinner/>}
                 <div className="row my-3">
                     { !this.state.loading && this.state.articles.map((elements)=>{
