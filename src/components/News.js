@@ -75,7 +75,7 @@ export class News extends Component {
 
             
             <div className="container my-3">
-                <h1 className="text-center" style={{margin: "30px 0px"}}>NewsMonkey - Top {this.props.category.charAt(0).toUpperCase()+this.props.category.slice(1)} Headline</h1>
+                <h1 className="text-center" style={{margin: "30px 0px",marginTop: "90px"}}>NewsMonkey - Top {this.props.category.charAt(0).toUpperCase()+this.props.category.slice(1)} Headline</h1>
                 {this.state.loading && <Spinner/>}
 
                 <InfiniteScroll dataLength={this.state.articles.length} next={this.fetchMoreData} hasMore={this.state.articles.length!==this.state.totalResults}
